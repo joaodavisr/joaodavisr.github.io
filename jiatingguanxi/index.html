@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>家庭关系问题-家庭沟通修复与心理调适指南</title>
+    <meta name="description" content="本站提供专业的家庭关系问题解决方案，涵盖代际冲突、亲子教育、婆媳相处及婚姻危机的沟通技巧与心理调适方法，帮助您重建和谐家庭氛围。">
+    <meta name="keywords" content="家庭关系问题,家庭沟通,亲子教育,婆媳矛盾,婚姻修复,家庭心理辅导">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #5D8AA8;
+            --secondary-color: #8DA399;
+            --accent-color: #D4A373;
+            --bg-color: #F9F9F9;
+            --card-bg: #FFFFFF;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --spacing-unit: 16px;
+            --border-radius: 8px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* 头部 */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+            padding: 8px 0;
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+
+        .cta-button {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #4a6f8f;
+            color: white;
+        }
+
+        /* Hero 区域 */
+        .hero {
+            background: linear-gradient(135deg, #eef2f3 0%, #8e9eab 100%);
+            padding: 80px 0;
+            text-align: center;
+            color: var(--text-main);
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 16px;
+            color: var(--primary-color);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 32px;
+        }
+
+        .search-box {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            background: white;
+            border-radius: 50px;
+            padding: 4px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .search-box input {
+            flex: 1;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            outline: none;
+            font-size: 16px;
+        }
+
+        .search-box button {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .search-box button:hover {
+            background-color: #bfa065;
+        }
+
+        /* 核心痛点 */
+        .pain-points {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        .section-title p {
+            color: var(--text-secondary);
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid transparent;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+
+        .card-icon {
+            font-size: 32px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .card h3 {
+            margin-bottom: 12px;
+            font-size: 20px;
+        }
+
+        .card p {
+            color: var(--text-secondary);
+            font-size: 15px;
+        }
+
+        /* 资讯/文章列表 */
+        .articles {
+            padding: 60px 0;
+            background-color: #fff;
+        }
+
+        .article-item {
+            display: flex;
+            gap: 24px;
+            padding: 24px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .article-item:last-child {
+            border-bottom: none;
+        }
+
+        .article-thumb {
+            width: 240px;
+            height: 160px;
+            background-color: #eee;
+            border-radius: var(--border-radius);
+            flex-shrink: 0;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .article-content {
+            flex: 1;
+        }
+
+        .article-tag {
+            display: inline-block;
+            background-color: #f0f4f8;
+            color: var(--primary-color);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            margin-bottom: 8px;
+        }
+
+        .article-content h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .article-content h3 a:hover {
+            color: var(--primary-color);
+        }
+
+        .article-meta {
+            font-size: 14px;
+            color: #999;
+            margin-top: 12px;
+        }
+
+        /* 常见问题 */
+        .faq {
+            padding: 60px 0;
+        }
+
+        .faq-item {
+            background: var(--card-bg);
+            margin-bottom: 16px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            background-color: #fff;
+        }
+
+        .faq-question:hover {
+            background-color: #fafafa;
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--text-secondary);
+            display: none;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 15px;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        .faq-item.active .faq-question::before {
+            content: '+';
+            font-weight: bold;
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 60px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #bdc3c7;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+            }
+
+            nav ul {
+                margin: 15px 0;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .article-item {
+                flex-direction: column;
+            }
+
+            .article-thumb {
+                width: 100%;
+                height: 180px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <span>❤</span> 家和网
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#problems">常见问题</a></li>
+                    <li><a href="#solutions">解决方案</a></li>
+                    <li><a href="#articles">心理文章</a></li>
+                    <li><a href="#contact">联系我们</a></li>
+                </ul>
+            </nav>
+            <a href="#contact" class="cta-button">预约咨询</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>家庭关系问题修复指南</h1>
+                <p>面对代际冲突、亲子沟通障碍或婚姻危机？我们提供专业的心理分析与实用的沟通技巧，助您重建和谐的家庭连接。</p>
+                <div class="search-box">
+                    <input type="text" placeholder="输入您遇到的家庭问题，如：婆媳矛盾、青春期叛逆...">
+                    <button type="button">搜索</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 核心问题分类 -->
+        <section id="problems" class="container pain-points">
+            <div class="section-title">
+                <h2>常见的家庭困扰</h2>
+                <p>了解这些普遍的困境，是解决问题的第一步</p>
+            </div>
+            <div class="grid-3">
+                <article class="card" style="border-top-color: #e74c3c;">
+                    <span class="card-icon">👨‍👩‍👧‍👦</span>
+                    <h3>亲子关系</h3>
+                    <p>面对青春期叛逆、学业压力或隔代教养冲突，父母往往感到无助与焦虑，缺乏有效的引导方式。</p>
+                </article>
+                <article class="card" style="border-top-color: #f39c12;">
+                    <span class="card-icon">💑</span>
+                    <h3>婚姻危机</h3>
+                    <p>沟通缺失、情感疏离、经济压力或第三者问题，导致婚姻出现裂痕，双方陷入冷战或争吵。</p>
+                </article>
+                <article class="card" style="border-top-color: #9b59b6;">
+                    <span class="card-icon">👵</span>
+                    <h3>代际矛盾</h3>
+                    <p>婆媳关系紧张、两代人的生活方式差异（如育儿观念、消费习惯），常引发家庭内部的不和谐。</p>
+                </article>
+                <article class="card" style="border-top-color: #3498db;">
+                    <span class="card-icon">🏠</span>
+                    <h3>家庭氛围</h3>
+                    <p>家庭沟通模式僵化，缺乏情感支持，导致家庭成员感到压抑、孤独或缺乏归属感。</p>
+                </article>
+                <article class="card" style="border-top-color: #1abc9c;">
+                    <span class="card-icon">🤝</span>
+                    <h3>边界问题</h3>
+                    <p>父母过度干涉子女生活，或子女忽视原生家庭情感需求，造成心理边界不清与冲突。</p>
+                </article>
+                <article class="card" style="border-top-color: #e67e22;">
+                    <span class="card-icon">💔</span>
+                    <h3>离婚与重组</h3>
+                    <p>离婚后的亲子探视、抚养费纠纷，以及再婚家庭中的融合问题，对家庭成员心理影响深远。</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- 解决方案与技巧 -->
+        <section id="solutions" class="articles">
+            <div class="container">
+                <div class="section-title">
+                    <h2>实用修复技巧</h2>
+                    <p>从心理学角度出发，掌握改善关系的具体方法</p>
+                </div>
+                
+                <div class="grid-3">
+                    <article class="card">
+                        <h3>非暴力沟通四步法</h3>
+                        <p>学习如何表达观察、感受、需要和请求，避免指责与评判，有效化解对方的防御心理。</p>
+                        <a href="#" style="color: var(--primary-color); font-size: 14px; margin-top: 10px; display: inline-block;">阅读详情 &rarr;</a>
+                    </article>
+                    <article class="card">
+                        <h3>情绪急救指南</h3>
+                        <p>当冲突升级时，如何通过暂停、深呼吸等生理调节手段，防止说出后悔的话。</p>
+                        <a href="#" style="color: var(--primary-color); font-size: 14px; margin-top: 10px; display: inline-block;">阅读详情 &rarr;</a>
+                    </article>
+                    <article class="card">
+                        <h3>建立家庭契约</h3>
+                        <p>制定家庭会议制度与规则，让每个成员都有发言权，通过民主协商解决分歧。</p>
+                        <a href="#" style="color: var(--primary-color); font-size: 14px; margin-top: 10px; display: inline-block;">阅读详情 &rarr;</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 最新资讯 -->
+        <section id="articles" class="container">
+            <div class="section-title">
+                <h2>深度心理文章</h2>
+                <p>探索家庭关系的深层心理机制</p>
+            </div>
+            
+            <article class="article-item">
+                <div class="article-thumb" style="background-image: url('https://picsum.photos/seed/family1/240/160');"></div>
+                <div class="article-content">
+                    <span class="article-tag">亲子教育</span>
+                    <h3><a href="#">为什么孩子越长大越不想回家？解码“回避型依恋”背后的家庭成因</a></h3>
+                    <p>很多成年子女在节假日选择逃避家庭聚会，这往往源于童年时期未被满足的情感需求。本文将深入分析原生家庭对依恋模式的影响，并提供重建信任的建议。</p>
+                    <div class="article-meta">2023-10-24 · 心理专栏</div>
+                </div>
+            </article>
+
+            <article class="article-item">
+                <div class="article-thumb" style="background-image: url('https://picsum.photos/seed/family2/240/160');"></div>
+                <div class="article-content">
+                    <span class="article-tag">婚姻修复</span>
+                    <h3><a href="#">沉默是婚姻最大的杀手：如何打破“冷暴力”的死循环</a></h3>
+                    <p>比起激烈的争吵，长期的沉默往往更具破坏力。本文探讨了“情感忽视”对婚姻的侵蚀，并指导夫妻双方如何打破僵局，开启深度的情感对话。</p>
+                    <div class="article-meta">2023-10-22 · 婚姻指南</div>
+                </div>
+            </article>
+
+            <article class="article-item">
+                <div class="article-thumb" style="background-image: url('https://picsum.photos/seed/family3/240/160');"></div>
+                <div class="article-content">
+                    <span class="article-tag">婆媳关系</span>
+                    <h3><a href="#">界限感：婆媳和谐相处的核心法则</a></h3>
+                    <p>婆媳矛盾的本质往往不是爱的问题，而是界限不清。通过设立合理的心理和物理边界，既能保持亲情，又能维护小家庭的独立性。</p>
+                    <div class="article-meta">2023-10-20">家庭关系</div>
+                </div>
+            </article>
+        </section>
+
+        <!-- 常见问题 FAQ -->
+        <section id="faq" class="faq">
+            <div class="container">
+                <div class="section-title">
+                    <h2>常见问题解答</h2>
+                    <p>您可能关心的问题</p>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">家庭咨询真的有效吗？</div>
+                    <div class="faq-answer">是的，家庭治疗通过改变家庭成员的互动模式来改善关系。研究表明，经过系统的家庭咨询，大多数冲突都能得到显著缓解。</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">孩子沉迷游戏与家庭关系有关吗？</div>
+                    <div class="faq-answer">游戏往往是家庭关系问题的替代品。当孩子在现实生活中感到被忽视、被控制或缺乏成就感时，容易沉迷网络。解决游戏问题通常需要先改善亲子互动。</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">什么时候需要寻求专业心理帮助？</div>
+                    <div class="faq-answer">当家庭冲突升级为肢体暴力、长期的情绪压抑导致身心疾病、或者严重影响正常生活和工作时，建议及时寻求专业心理咨询师的帮助。</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 行动呼吁 -->
+        <section id="contact" style="background-color: var(--primary-color); padding: 60px 0; color: white; text-align: center;">
+            <div class="container">
+                <h2 style="margin-bottom: 20px;">家庭问题需要及时关注</h2>
+                <p style="margin-bottom: 30px; opacity: 0.9;">如果您正面临无法独自解决的困扰，我们的专业咨询师随时准备为您提供支持。</p>
+                <button class="cta-button" style="background-color: white; color: var(--primary-color);">立即免费咨询</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <p style="color: #bdc3c7; font-size: 14px;">家和网致力于提供科学、专业的家庭关系咨询服务，帮助每个家庭找回温暖与和谐。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>服务项目</h4>
+                    <ul>
+                        <li><a href="#">亲子关系辅导</a></li>
+                        <li><a href="#">婚姻危机干预</a></li>
+                        <li><a href="#">家庭治疗</a></li>
+                        <li><a href="#">婚前心理评估</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#">心理测评</a></li>
+                        <li><a href="#">自助工具</a></li>
+                        <li><a href="#">专家团队</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li>电话：400-123-4567</li>
+                        <li>邮箱：support@homepeace.com</li>
+                        <li>地址：幸福大道心理咨询中心</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 家和网 版权所有 | 仅供演示参考
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ 切换逻辑
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // 关闭其他打开的项
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // 切换当前项
+                    item.classList.toggle('active');
+                });
+            });
+
+            // 导航栏滚动效果
+            window.addEventListener('scroll', function() {
+                const header = document.querySelector('header');
+                if (window.scrollY > 50) {
+                    header.style.boxShadow = '0 4px 12px rgba(0,0,0,0.1)';
+                } else {
+                    header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.05)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
