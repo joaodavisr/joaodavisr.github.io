@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>上海市实验学校附属小学-素质教育与全面发展平台</title>
+    <meta name="description" content="上海市实验学校附属小学官方网站，提供学校概况、招生信息、教育教学成果、校园文化及家校互动平台。关注学生德智体美劳全面发展。">
+    <meta name="keywords" content="上海市实验学校附属小学,上实附小,上海小学,浦东新区小学,素质教育">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #004aad;
+            --secondary-color: #f0f4f8;
+            --accent-color: #ff6b35;
+            --text-dark: #333333;
+            --text-gray: #666666;
+            --white: #ffffff;
+            --border-radius: 8px;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #f9f9f9;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .top-bar {
+            background-color: var(--primary-color);
+            color: var(--white);
+            font-size: 14px;
+            padding: 8px 0;
+            text-align: center;
+        }
+
+        .header-container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .logo span {
+            margin-left: 10px;
+            font-size: 16px;
+            color: var(--text-gray);
+            font-weight: normal;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-dark);
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(0,74,173,0.9), rgba(0,100,200,0.8)), url('https://picsum.photos/seed/school1/1920/600') no-repeat center center/cover;
+            color: var(--white);
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            background-color: #e55a2b;
+        }
+
+        /* Container */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        /* Section Titles */
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 32px;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::before {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .section-header p {
+            color: var(--text-gray);
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        /* Features Section */
+        .features {
+            background-color: var(--white);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background-color: var(--secondary-color);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            transition: transform 0.3s;
+            text-align: center;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .feature-card h3 {
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .feature-card p {
+            color: var(--text-gray);
+            font-size: 15px;
+        }
+
+        /* News Section */
+        .news-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+
+        .news-list {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .news-item {
+            display: flex;
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+            transition: background 0.2s;
+        }
+
+        .news-item:last-child {
+            border-bottom: none;
+        }
+
+        .news-item:hover {
+            background-color: #f8f9fa;
+        }
+
+        .news-date {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 5px 10px;
+            border-radius: 4px;
+            text-align: center;
+            margin-right: 20px;
+            min-width: 70px;
+        }
+
+        .news-date .day {
+            font-size: 20px;
+            font-weight: bold;
+            display: block;
+        }
+
+        .news-date .month {
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+
+        .news-content h4 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .news-content p {
+            color: var(--text-gray);
+            font-size: 14px;
+        }
+
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .sidebar-widget {
+            background: var(--white);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .sidebar-widget h4 {
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--secondary-color);
+            color: var(--text-dark);
+        }
+
+        .quick-links li {
+            margin-bottom: 10px;
+        }
+
+        .quick-links a {
+            color: var(--text-gray);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .quick-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: #bdc3c7;
+            padding: 60px 20px 20px;
+        }
+
+        .footer-content {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .footer-col p {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            nav ul {
+                gap: 15px;
+                font-size: 14px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .about-grid, .news-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .news-item {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .news-date {
+                margin: 0 auto 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="top-bar">
+            上海市实验学校附属小学 - 培养面向未来的创新型人才
+        </div>
+        <div class="header-container">
+            <div class="logo">
+                上实附小
+                <span>Shanghai Experimental School Affiliated Primary</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#about">学校概况</a></li>
+                    <li><a href="#features">办学特色</a></li>
+                    <li><a href="#news">校园动态</a></li>
+                    <li><a href="#admissions">招生信息</a></li>
+                    <li><a href="#contact">联系我们</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>上海市实验学校附属小学</h1>
+        <p>秉承上实集团先进教育理念，构建以学生为中心的探究式学习体系，致力于实现德智体美劳全面发展的素质教育目标。</p>
+        <a href="#about" class="cta-button">了解更多</a>
+    </section>
+
+    <main class="container">
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="section-header">
+                <h2>学校概况</h2>
+                <p>School Introduction</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-text">
+                    <h3>立足浦东，辐射全市</h3>
+                    <p>上海市实验学校附属小学作为上海市实验学校集团的成员校，依托集团深厚的办学底蕴和优质教育资源，坚持“以人为本，全面发展”的办学宗旨。学校坐落于浦东新区核心区域，环境优美，设施先进，拥有一支师德高尚、业务精湛的教师队伍。</p>
+                    <p>学校注重课程改革，在开齐开足国家课程的基础上，积极探索拓展型、研究型课程，为每一位学生的个性化成长提供广阔空间。通过多元化的评价体系，激发学生的潜能，培养具有国际视野、家国情怀的创新型人才。</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://picsum.photos/seed/school_building/600/400" alt="上海市实验学校附属小学校园环境">
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features">
+            <div class="section-header">
+                <h2>办学特色</h2>
+                <p>Core Competencies</p>
+            </div>
+            <div class="feature-grid">
+                <article class="feature-card">
+                    <div class="feature-icon">📚</div>
+                    <h3>多元课程体系</h3>
+                    <p>构建基础型、拓展型、探究型三维课程结构，注重学科融合与跨学科学习。</p>
+                </article>
+                <article class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>艺术与科技融合</h3>
+                    <p>开设创客实验室、机器人社团及多种艺术社团，培养学生创新实践能力。</p>
+                </article>
+                <article class="feature-card">
+                    <div class="feature-icon">🏃</div>
+                    <h3>阳光体育活动</h3>
+                    <p>落实“每天锻炼一小时”，开展丰富多彩的体育赛事，增强学生体质。</p>
+                </article>
+                <article class="feature-card">
+                    <div class="feature-icon">🤝</div>
+                    <h3>家校共育平台</h3>
+                    <p>建立完善的家长学校机制，促进家校沟通，形成教育合力。</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- News Section -->
+        <section id="news" class="news">
+            <div class="section-header">
+                <h2>校园动态</h2>
+                <p>Latest News</p>
+            </div>
+            <div class="news-grid">
+                <div class="news-list">
+                    <div class="news-item">
+                        <div class="news-date">
+                            <span class="day">15</span>
+                            <span class="month">10月</span>
+                        </div>
+                        <div class="news-content">
+                            <h4>我校学子在浦东新区科技创新大赛中荣获佳绩</h4>
+                            <p>在刚刚结束的第XX届浦东新区青少年科技创新大赛中，我校学生凭借扎实的专业知识和创新思维，斩获多项一等奖。</p>
+                        </div>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-date">
+                            <span class="day">08</span>
+                            <span class="month">10月</span>
+                        </div>
+                        <div class="news-content">
+                            <h4>“书香校园”读书节系列活动正式启动</h4>
+                            <p>为营造浓厚的阅读氛围，学校将于本月底举办为期一个月的读书节，包含经典诵读、好书推荐等丰富活动。</p>
+                        </div>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-date">
+                            <span class="day">01</span>
+                            <span class="month">10月</span>
+                        </div>
+                        <div class="news-content">
+                            <h4>上海市实验学校附属小学举办新教师入职培训</h4>
+                            <p>为帮助新教师快速适应岗位，学校组织了为期一周的岗前培训，涵盖师德师风、教学常规等核心内容。</p>
+                        </div>
+                    </div>
+                </div>
+                <aside class="sidebar">
+                    <div class="sidebar-widget">
+                        <h4>快速导航</h4>
+                        <ul class="quick-links">
+                            <li><a href="#">招生简章 <span>›</span></a></li>
+                            <li><a href="#">校园公告 <span>›</span></a></li>
+                            <li><a href="#">通知公告 <span>›</span></a></li>
+                            <li><a href="#">党建工作 <span>›</span></a></li>
+                            <li><a href="#">工会之家 <span>›</span></a></li>
+                        </ul>
+                    </div>
+                    <div class="sidebar-widget">
+                        <h4>招生专栏</h4>
+                        <p style="font-size: 14px; color: #666; margin-bottom: 10px;">2024年秋季招生工作正在进行中，请关注官方通知。</p>
+                        <a href="#" style="color: var(--primary-color); font-weight: bold;">查看详情</a>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <!-- Admissions & FAQ Section -->
+        <section id="admissions" class="admissions" style="background-color: var(--secondary-color); border-radius: var(--border-radius); padding: 50px;">
+            <div class="section-header">
+                <h2>常见问题</h2>
+                <p>FAQ</p>
+            </div>
+            <div style="max-width: 800px; margin: 0 auto;">
+                <details style="margin-bottom: 15px; border-bottom: 1px solid #ddd; padding-bottom: 15px;">
+                    <summary style="cursor: pointer; font-weight: bold; font-size: 18px;">学校每年的招生对象和范围是什么？</summary>
+                    <p style="margin-top: 10px; color: var(--text-gray);">学校主要面向浦东新区招生，具体范围依据当年教育局划定的学区范围执行。通常招收年满6周岁的适龄儿童，具体入学年龄以当年教育局规定为准。</p>
+                </details>
+                <details style="margin-bottom: 15px; border-bottom: 1px solid #ddd; padding-bottom: 15px;">
+                    <summary style="cursor: pointer; font-weight: bold; font-size: 18px;">学校的课程设置有哪些特色？</summary>
+                    <p style="margin-top: 10px; color: var(--text-gray)；">学校在严格执行国家课程标准的基础上，开设了丰富的拓展课程和社团活动，包括科学实验、编程、戏剧、管乐等，注重培养学生的综合素养。</p>
+                </details>
+                <details style="margin-bottom: 15px; border-bottom: 1px solid #ddd; padding-bottom: 15px;">
+                    <summary style="cursor: pointer; font-weight: bold; font-size: 18px;">如何获取最新的招生信息和报名方式？</summary>
+                    <p style="margin-top: 10px; color: var(--text-gray);">请密切关注学校官方网站发布的招生公告，或拨打学校招生咨询电话。我们也会通过官方微信公众号发布相关信息。</p>
+                </details>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>上海市实验学校附属小学</h4>
+                <p>地址：上海市浦东新区XX路XX号</p>
+                <p>邮编：200120</p>
+                <p>电话：021-12345678</p>
+                <p>邮箱：info@example.com</p>
+            </div>
+            <div class="footer-col">
+                <h4>关于我们</h4>
+                <p>上海市实验学校附属小学是上海市实验学校集团的重要组成部分，秉承“全面发展，个性成长”的教育理念，致力于为每一位学生提供优质的基础教育。</p>
+            </div>
+            <div class="footer-col">
+                <h4>快速链接</h4>
+                <ul class="quick-links">
+                    <li><a href="#">校长信箱</a></li>
+                    <li><a href="#">师德师风建设</a></li>
+                    <li><a href="#">安全教育</a></li>
+                    <li><a href="#">校务公开</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 上海市实验学校附属小学 版权所有 | 沪ICP备XXXXXXXX号</p>
+        </div>
+    </footer>
+
+</body>
+</html>
