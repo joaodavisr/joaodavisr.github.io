@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>热点书库-海量正版小说与畅销书籍阅读平台</title>
+    <meta name="description" content="热点书库为您提供最新、最全的网络小说、畅销书籍及经典文学在线阅读服务。支持多设备同步，海量藏书任您畅读。">
+    <meta name="keywords" content="热点书库,小说阅读,在线看书,电子书,网络小说,畅销书">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #3b82f6;
+            --primary-hover: #2563eb;
+            --secondary-color: #64748b;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-sub: #64748b;
+            --border-color: #e2e8f0;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
+            --radius-md: 8px;
+            --radius-lg: 12px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--text-main);
+            font-size: 16px;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            border-radius: var(--radius-md);
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: none;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            box-shadow: 0 2px 4px rgba(59, 130, 246, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            padding: 60px 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 16px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 32px;
+        }
+
+        .search-box {
+            display: flex;
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 50px;
+            padding: 4px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .search-box input {
+            flex: 1;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            outline: none;
+            border-radius: 50px 0 0 50px;
+        }
+
+        .search-box button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        /* Main Layout */
+        .main-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 40px;
+            flex: 1;
+        }
+
+        /* Sidebar */
+        aside {
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+
+        .category-menu {
+            background: var(--card-bg);
+            border-radius: var(--radius-lg);
+            padding: 20px;
+            border: 1px solid var(--border-color);
+        }
+
+        .category-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--bg-color);
+            color: var(--text-main);
+        }
+
+        .category-list li {
+            margin-bottom: 8px;
+        }
+
+        .category-list a {
+            display: block;
+            padding: 8px 12px;
+            border-radius: var(--radius-md);
+            color: var(--text-sub);
+            font-size: 14px;
+        }
+
+        .category-list a:hover {
+            background-color: var(--bg-color);
+            color: var(--primary-color);
+        }
+
+        /* Content Area */
+        .content-area {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        /* Section Title */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text-main);
+            position: relative;
+            padding-left: 16px;
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 4px;
+            bottom: 4px;
+            width: 4px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .view-more {
+            color: var(--primary-color);
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .view-more:hover {
+            text-decoration: underline;
+        }
+
+        /* Book Grid */
+        .book-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 24px;
+        }
+
+        .book-card {
+            background: var(--card-bg);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .book-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .book-cover {
+            position: relative;
+            padding-top: 140%;
+            background-color: #e2e8f0;
+            overflow: hidden;
+        }
+
+        .book-cover img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .book-tag {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            background-color: rgba(0,0,0,0.7);
+            color: white;
+            font-size: 10px;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        .book-info {
+            padding: 12px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .book-title {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 4px;
+            line-height: 1.4;
+            color: var(--text-main);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+
+        .book-author {
+            font-size: 12px;
+            color: var(--text-sub);
+            margin-bottom: 8px;
+        }
+
+        .book-meta {
+            margin-top: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .book-status {
+            font-size: 12px;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+
+        .status-ongoing {
+            background-color: #dbeafe;
+            color: #1e40af;
+        }
+
+        .status-finished {
+            background-color: #dcfce7;
+            color: #166534;
+        }
+
+        .book-stats {
+            font-size: 12px;
+            color: var(--text-sub);
+        }
+
+        /* Hot List */
+        .hot-list {
+            background: var(--card-bg);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            border: 1px solid var(--border-color);
+        }
+
+        .hot-item {
+            display: flex;
+            gap: 16px;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .hot-item:last-child {
+            border-bottom: none;
+        }
+
+        .hot-rank {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--text-sub);
+            width: 24px;
+            text-align: center;
+            line-height: 1;
+        }
+
+        .hot-rank.top-1 { color: #f59e0b; }
+        .hot-rank.top-2 { color: #94a3b8; }
+        .hot-rank.top-3 { color: #b45309; }
+
+        .hot-info {
+            flex: 1;
+        }
+
+        .hot-title {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 4px;
+            display: block;
+        }
+
+        .hot-title:hover {
+            color: var(--primary-color);
+        }
+
+        .hot-desc {
+            font-size: 12px;
+            color: var(--text-sub);
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .hot-views {
+            font-size: 12px;
+            color: var(--text-sub);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1e293b;
+            color: #94a3b8;
+            padding: 60px 20px 20px;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h3 {
+            color: white;
+            font-size: 20px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-brand p {
+            font-size: 14px;
+            line-height: 1.8;
+            max-width: 300px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col a {
+            font-size: 14px;
+        }
+
+        .footer-col a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 20px;
+            border-top: 1px solid #334155;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .main-container {
+                grid-template-columns: 1fr;
+            }
+
+            aside {
+                position: static;
+                order: -1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 0 16px;
+            }
+
+            .nav-links {
+                display: none; /* Simplified for mobile */
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                </svg>
+                热点书库
+            </a>
+            <nav class="nav-links">
+                <a href="#" class="active">首页</a>
+                <a href="#">玄幻</a>
+                <a href="#">都市</a>
+                <a href="#">历史</a>
+                <a href="#">科幻</a>
+                <a href="#">榜单</a>
+            </nav>
+            <div class="header-actions">
+                <button class="btn btn-outline">登录</button>
+                <button class="btn btn-primary">注册</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>探索无限阅读世界</h1>
+            <p>汇聚全网热门小说，更新及时，排版舒适。无论是热血玄幻还是细腻言情，热点书库都能满足您的阅读需求。</p>
+            <div class="search-box">
+                <input type="text" placeholder="搜索书名、作者或关键词...">
+                <button>搜索</button>
+            </div>
+        </div>
+    </section>
+
+    <div class="main-container">
+        <aside>
+            <div class="category-menu">
+                <h3 class="category-title">分类浏览</h3>
+                <ul class="category-list">
+                    <li><a href="#">🔥 热门推荐</a></li>
+                    <li><a href="#">🔥 本周强推</a></li>
+                    <li><a href="#">玄幻奇幻</a></li>
+                    <li><a href="#">都市异能</a></li>
+                    <li><a href="#">历史军事</a></li>
+                    <li><a href="#">科幻末世</a></li>
+                    <li><a href="#">武侠仙侠</a></li>
+                    <li><a href="#">同人小说</a></li>
+                    <li><a href="#">悬疑推理</a></li>
+                    <li><a href="#">青春校园</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <main class="content-area">
+            <!-- Section 1: Recommended -->
+            <section>
+                <div class="section-header">
+                    <h2 class="section-title">每日推荐</h2>
+                    <a href="#" class="view-more">查看更多 &rarr;</a>
+                </div>
+                <div class="book-grid">
+                    <article class="book-card">
+                        <div class="book-cover">
+                            <img src="https://picsum.photos/seed/book1/300/420" alt="封面">
+                            <span class="book-tag">完结</span>
+                        </div>
+                        <div class="book-info">
+                            <h3 class="book-title">深渊主宰：从吞噬神格开始</h3>
+                            <p class="book-author">墨染青衣</p>
+                            <div class="book-meta">
+                                <span class="book-status status-finished">已完结</span>
+                                <span class="book-stats">452万</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="book-card">
+                        <div class="book-cover">
+                            <img src="https://picsum.photos/seed/book2/300/420" alt="封面">
+                            <span class="book-tag">连载</span>
+                        </div>
+                        <div class="book-info">
+                            <h3 class="book-title">都市之最强狂兵</h3>
+                            <p class="book-author">龙腾四海</p>
+                            <div class="book-meta">
+                                <span class="book-status status-ongoing">连载中</span>
+                                <span class="book-stats">128万</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="book-card">
+                        <div class="book-cover">
+                            <img src="https://picsum.photos/seed/book3/300/420" alt="封面">
+                            <span class="book-tag">完结</span>
+                        </div>
+                        <div class="book-info">
+                            <h3 class="book-title">大秦：开局获得武道通神</h3>
+                            <p class="book-author">历史哥</p>
+                            <div class="book-meta">
+                                <span class="book-status status-finished">已完结</span>
+                                <span class="book-stats">89万</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="book-card">
+                        <div class="book-cover">
+                            <img src="https://picsum.photos/seed/book4/300/420" alt="封面">
+                            <span class="book-tag">连载</span>
+                        </div>
+                        <div class="book-info">
+                            <h3 class="book-title">赛博朋克：我的义体全满级</h3>
+                            <p class="book-author">未来行者</p>
+                            <div class="book-meta">
+                                <span class="book-status status-ongoing">连载中</span>
+                                <span class="book-stats">210万</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="book-card">
+                        <div class="book-cover">
+                            <img src="https://picsum.photos/seed/book5/300/420" alt="封面">
+                            <span class="book-tag">完结</span>
+                        </div>
+                        <div class="book-info">
+                            <h3 class="book-title">全职法师：开局觉醒禁咒</h3>
+                            <p class="book-author">法神降临</p>
+                            <div class="book-meta">
+                                <span class="book-status status-finished">已完结</span>
+                                <span class="book-stats">365万</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="book-card">
+                        <div class="book-cover">
+                            <img src="https://picsum.photos/seed/book6/300/420" alt="封面">
+                            <span class="book-tag">连载</span>
+                        </div>
+                        <div class="book-info">
+                            <h3 class="book-title">大唐：我，镇国公，镇天下</h3>
+                            <p class="book-author">李长庚</p>
+                            <div class="book-meta">
+                                <span class="book-status status-ongoing">连载中</span>
+                                <span class="book-stats">96万</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Section 2: Hot Rankings -->
+            <section>
+                <div class="section-header">
+                    <h2 class="section-title">全网飙升榜</h2>
+                    <a href="#" class="view-more">查看榜单 &rarr;</a>
+                </div>
+                <div class="hot-list">
+                    <div class="hot-item">
+                        <div class="hot-rank top-1">1</div>
+                        <div class="hot-info">
+                            <a href="#" class="hot-title">长生从签到开始</a>
+                            <span class="hot-desc">修仙界的一股清流，拒绝内卷，只求长生。</span>
+                        </div>
+                        <div class="hot-views">8.2亿热度</div>
+                    </div>
+                    <div class="hot-item">
+                        <div class="hot-rank top-2">2</div>
+                        <div class="hot-info">
+                            <a href="#" class="hot-title">我在精神病院学斩神</a>
+                            <span class="hot-desc">都市神话传说，守护这座城市的平凡英雄。</span>
+                        </div>
+                        <div class="hot-views">7.5亿热度</div>
+                    </div>
+                    <div class="hot-item">
+                        <div class="hot-rank top-3">3</div>
+                        <div class="hot-info">
+                            <a href="#" class="hot-title">深空彼岸</a>
+                            <span class="hot-desc">辰东力作，探索星空彼岸的神秘文明。</span>
+                        </div>
+                        <div class="hot-views">6.8亿热度</div>
+                    </div>
+                    <div class="hot-item">
+                        <div class="hot-rank">4</div>
+                        <div class="hot-info">
+                            <a href="#" class="hot-title">道诡异仙</a>
+                            <span class="hot-desc">克苏鲁风格的修仙，诡异与疯狂并存。</span>
+                        </div>
+                        <div class="hot-views">5.9亿热度</div>
+                    </div>
+                    <div class="hot-item">
+                        <div class="hot-rank">5</div>
+                        <div class="hot-info">
+                            <a href="#" class="hot-title">夜的命名术</a>
+                            <span class="hot-desc">穿越两百年，在两个世界中寻找真相。</span>
+                        </div>
+                        <div class="hot-views">5.1亿热度</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 3: New Updates -->
+            <section>
+                <div class="section-header">
+                    <h2 class="section-title">最新更新</h2>
+                </div>
+                <div class="book-grid">
+                    <article class="book-card">
+                        <div class="book-cover">
+                            <img src="https://picsum.photos/seed/book7/300/420" alt="封面">
+                        </div>
+                        <div class="book-info">
+                            <h3 class="book-title">绝世武神</h3>
+                            <p class="book-author">柳轻眉</p>
+                            <div class="book-meta">
+                                <span class="book-status status-ongoing">更新至 3245章</span>
+                                <span class="book-stats">3小时前</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="book-card">
+                        <div class="book-cover">
+                            <img src="https://picsum.photos/seed/book8/300/420" alt="封面">
+                        </div>
+                        <div class="book-info">
+                            <h3 class="book-title">剑道独尊</h3>
+                            <p class="book-author">剑尘</p>
+                            <div class="book-meta">
+                                <span class="book-status status-ongoing">更新至 1200章</span>
+                                <span class="book-stats">5小时前</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="book-card">
+                        <div class="book-cover">
+                            <img src="https://picsum.photos/seed/book9/300/420" alt="封面">
+                        </div>
+                        <div class="book-info">
+                            <h3 class="book-title">修罗武神</h3>
+                            <p class="book-author">楚枫</p>
+                            <div class="book-meta">
+                                <span class="book-status status-ongoing">更新至 5600章</span>
+                                <span class="book-stats">8小时前</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="book-card">
+                        <div class="book-cover">
+                            <img src="https://picsum.photos/seed/book10/300/420" alt="封面">
+                        </div>
+                        <div class="book-info">
+                            <h3 class="book-title">武神天下</h3>
+                            <p class="book-author">方想</p>
+                            <div class="book-meta">
+                                <span class="book-status status-ongoing">更新至 980章</span>
+                                <span class="book-stats">昨天</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                    </svg>
+                    热点书库
+                </h3>
+                <p>致力于为读者提供最优质的在线阅读体验，收录海量正版小说，涵盖玄幻、都市、历史、科幻等热门题材。在这里，发现您喜爱的故事。</p>
+            </div>
+            <div class="footer-col">
+                <h4>关于我们</h4>
+                <ul>
+                    <li><a href="#">网站介绍</a></li>
+                    <li><a href="#">版权声明</a></li>
+                    <li><a href="#">联系合作</a></li>
+                    <li><a href="#">加入我们</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>帮助中心</h4>
+                <ul>
+                    <li><a href="#">阅读指南</a></li>
+                    <li><a href="#">意见反馈</a></li>
+                    <li><a href="#">常见问题</a></li>
+                    <li><a href="#">违规举报</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>关注我们</h4>
+                <ul>
+                    <li><a href="#">微信公众号</a></li>
+                    <li><a href="#">新浪微博</a></li>
+                    <li><a href="#">QQ粉丝群</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 热点书库 版权所有 | 仅供学习交流使用</p>
+        </div>
+    </footer>
+
+</body>
+  </html>
