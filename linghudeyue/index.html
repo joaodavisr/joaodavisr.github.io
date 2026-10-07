@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>灵狐的约定 - 唯美古风插画与奇幻故事集</title>
+    <meta name="description" content="灵狐的约定是一个专注于唯美古风插画与奇幻故事分享的在线社区。这里汇集了灵狐传说、仙侠绘卷与奇幻短篇，致力于为读者提供沉浸式的视觉与文字体验。">
+    <meta name="keywords" content="灵狐的约定, 古风插画, 奇幻故事, 仙侠小说, 灵狐传说, 美术作品">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #6a4c93;
+            --secondary-color: #c0567d;
+            --accent-color: #f6ad55;
+            --bg-dark: #1a202c;
+            --bg-card: #2d3748;
+            --text-main: #e2e8f0;
+            --text-muted: #a0aec0;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* Utility */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(26, 32, 44, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-main);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('https://picsum.photos/seed/foxlore/1920/1080.jpg') no-repeat center center/cover;
+        }
+
+        .hero-content {
+            z-index: 2;
+            max-width: 800px;
+            padding: 2rem;
+            animation: fadeIn Up 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #e2e8f0;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50px;
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(106, 76, 147, 0.4);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(106, 76, 147, 0.6);
+        }
+
+        /* Main Content Grid */
+        main {
+            padding: 4rem 0;
+        }
+
+        .grid-layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        /* Cards */
+        .card {
+            background-color: var(--bg-card);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            border-color: var(--primary-color);
+        }
+
+        .card-image {
+            height: 200px;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s ease;
+        }
+
+        .card:hover .card-image img {
+            transform: scale(1.05);
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .card-tag {
+            font-size: 0.8rem;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+        }
+
+        .card-excerpt {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 1rem;
+        }
+
+        /* Features Section */
+        .features {
+            background-color: #232d3b;
+            padding: 4rem 0;
+            margin-top: 4rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .feature-item i {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+
+        .feature-item h3 {
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        .feature-item p {
+            color: var(--text-muted);
+            padding: 0 1rem;
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 4rem 0;
+            background: linear-gradient(to bottom, var(--bg-dark), #222b3b);
+        }
+
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-text h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            color: var(--text-muted);
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-image img {
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #11151c;
+            padding: 3rem 0;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-links {
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links a {
+            margin: 0 1rem;
+            color: var(--text-muted);
+        }
+
+        .footer-links a:hover {
+            color: var(--text-main);
+        }
+
+        .copyright {
+            color: #4a5568;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-wrapper {
+                position: relative;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: var(--bg-dark);
+                padding: 1rem;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-content {
+                flex-direction: column-reverse;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo">灵狐的约定</div>
+            <button class="mobile-menu-btn" aria-label="菜单">☰</button>
+            <nav>
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">故事画廊</a></li>
+                    <li><a href="#">唯美插画</a></li>
+                    <li><a href="#">关于我们</a></li>
+                    <li><a href="#">投稿指南</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>灵狐的约定</h1>
+            <p>穿梭于幻境与现实的边缘，聆听古老而神秘的传说。在这里，每一次相遇都是一场关于爱、勇气与承诺的奇幻旅程。</p>
+            <a href="#gallery" class="btn">探索故事</a>
+        </div>
+    </section>
+
+    <main class="container">
+        <!-- Featured Section -->
+        <section id="gallery" class="section-title">
+            <h2>精选故事画廊</h2>
+        </section>
+
+        <div class="grid-layout">
+            <!-- Article 1 -->
+            <article class="card">
+                <div class="card-image">
+                    <img src="https://picsum.photos/seed/fox1/400/300.jpg" alt="月下灵狐插画">
+                </div>
+                <div class="card-body">
+                    <span class="card-tag">奇幻传说</span>
+                    <h3 class="card-title">月下灵狐的契约</h3>
+                    <p class="card-excerpt">在千年古树下，一位书生与一只化作人形的灵狐定下契约。为了报恩，灵狐陪伴书生度过三生三世，却不知这背后隐藏着怎样的宿命...</p>
+                    <div class="card-footer">
+                        <span>2023-10-15</span>
+                        <a href="#">阅读全文 &rarr;</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 2 -->
+            <article class="card">
+                <div class="card-image">
+                    <img src="https://picsum.photos/seed/fox2/400/300.jpg" alt="古风意境图">
+                </div>
+                <div class="card-body">
+                    <span class="card-tag">古风插画</span>
+                    <h3 class="card-title">浮生若梦，画中仙</h3>
+                    <p class="card-excerpt">一幅幅细腻的古风画作，描绘了古代女子的哀愁与欢愉。每一笔都似乎在诉说着一个未完的故事，让人沉醉其中。</p>
+                    <div class="card-footer">
+                        <span>2023-10-12</span>
+                        <a href="#">欣赏作品 &rarr;</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 3 -->
+            <article class="card">
+                <div class="card-image">
+                    <img src="https://picsum.photos/seed/fox3/400/300.jpg" alt="森林探险">
+                </div>
+                <div class="card-body">
+                    <span class="card-tag">冒险故事</span>
+                    <h3 class="card-title">迷雾森林的指引</h3>
+                    <p class="card-excerpt">主角误入迷雾森林，依靠一只神秘的灵狐指引方向。森林深处究竟隐藏着什么宝藏，还是更深的黑暗？</p>
+                    <div class="card-footer">
+                        <span>2023-10-10</span>
+                        <a href="#">阅读全文 &rarr;</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 4 -->
+            <article class="card">
+                <div class="card-image">
+                    <img src="https://picsum.photos/seed/fox4/400/300.jpg" alt="唯美风景">
+                </div>
+                <div class="card-body">
+                    <span class="card-tag">风景摄影</span>
+                    <h3 class="card-title">云深不知处</h3>
+                    <p class="card-excerpt">远离尘嚣的隐世之地，云雾缭绕，宛如仙境。这里记录了四季变换中的自然之美，也象征着灵狐出没的神秘领地。</p>
+                    <div class="card-footer">
+                        <span>2023-10-08</span>
+                        <a href="#">查看画廊 &rarr;</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="container">
+                <div class="section-title" style="font-size: 1.5rem;">我们的特色</div>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <i>✦</i>
+                        <h3>沉浸式阅读</h3>
+                        <p>精心编排的文字与配图，为您带来如同电影般的视觉与情感体验。</p>
+                    </div>
+                    <div class="feature-item">
+                        <i>✦</i>
+                        <h3>原创艺术</h3>
+                        <p>汇聚众多独立插画师与作家的原创作品，支持多元化创作风格。</p>
+                    </div>
+                    <div class="feature-item">
+                        <i>✦</i>
+                        <h3>社区互动</h3>
+                        <p>与志同道合的读者交流心得，分享对故事与艺术的感悟。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about-section">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-image">
+                        <img src="https://picsum.photos/seed/foxabout/600/400.jpg" alt="灵狐的约定团队">
+                    </div>
+                    <div class="about-text">
+                        <h2>关于灵狐的约定</h2>
+                        <p><strong>灵狐的约定</strong> 是一个致力于推广东方奇幻美学与原创故事的线上平台。我们相信，每一个故事都像是一只灵狐，拥有唤醒沉睡情感的力量。</p>
+                        <p>自平台创立以来，我们始终坚持原创，拒绝同质化内容。无论您是寻找治愈的短篇故事，还是欣赏精美的古风插画，这里都能满足您对美的向往。</p>
+                        <p>我们的目标是为创作者提供一个展示才华的舞台，为读者提供一个心灵的栖息地。愿这里的每一个篇章，都能成为您记忆中难以磨灭的约定。</p>
+                        <br>
+                        <a href="#" class="btn" style="font-size: 0.9rem; padding: 0.6rem 1.5rem;">了解更多</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#">版权声明</a>
+                <a href="#">隐私政策</a>
+                <a href="#">联系方式</a>
+                <a href="#">加入我们</a>
+            </div>
+            <p class="copyright">&copy; 2023 灵狐的约定. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            const navUl = document.querySelector('nav ul');
+
+            menuBtn.addEventListener('click', function() {
+                navUl.classList.toggle('active');
+                this.textContent = navUl.classList.contains('active') ? '✕' : '☰';
+            });
+
+            // Close menu when clicking a link
+            document.querySelectorAll('nav a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navUl.classList.remove('active');
+                    menuBtn.textContent = '☰';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
