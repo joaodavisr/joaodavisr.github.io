@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>换心奇情-都市异能医疗伦理与情感救赎故事集</title>
+    <meta name="description" content="换心奇情收录并解读关于心脏移植引发的命运交织、伦理冲突与情感救赎的都市异能故事。包含热门小说推荐、角色分析、医学背景科普及读者互动社区。">
+    <meta name="keywords" content="换心奇情,都市异能,心脏移植,情感救赎,悬疑小说,科幻医疗">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #c0392b;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-radius: 8px;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            --spacing-unit: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 24px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        nav a.active {
+            color: var(--accent-color);
+        }
+
+        .btn-subscribe {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .btn-subscribe:hover {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Section Styling */
+        section {
+            margin-bottom: 60px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 24px;
+            border-bottom: 2px solid #eaeaea;
+            padding-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -14px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+
+        .view-more {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Grid Layouts */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        /* Cards */
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 180px;
+            background-color: #eee;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-tag {
+            font-size: 0.75rem;
+            color: var(--accent-color);
+            background-color: #fceceb;
+            padding: 2px 8px;
+            border-radius: 4px;
+            align-self: flex-start;
+            margin-bottom: 8px;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            flex: 1;
+        }
+
+        .card-footer {
+            margin-top: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: #999;
+        }
+
+        .author {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .author-avatar {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-color: #ddd;
+        }
+
+        /* Featured Article */
+        .featured-card {
+            grid-column: span 2;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .featured-card .card-img {
+            width: 40%;
+            height: auto;
+        }
+
+        .featured-card .card-body {
+            padding: 30px;
+        }
+
+        .featured-card .card-title {
+            font-size: 1.5rem;
+        }
+
+        /* Topic List */
+        .topic-list {
+            list-style: none;
+        }
+
+        .topic-item {
+            display: flex;
+            align-items: center;
+            padding: 16px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .topic-icon {
+            width: 40px;
+            height: 40px;
+            background-color: #eef2f5;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 16px;
+            color: var(--primary-color);
+        }
+
+        .topic-content h4 {
+            font-size: 1rem;
+            margin-bottom: 4px;
+        }
+
+        .topic-content p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        /* FAQ Section */
+        .faq-item {
+            background: var(--card-bg);
+            margin-bottom: 12px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 20px;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 60px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: #ecf0f1;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a {
+            color: #bdc3c7;
+            font-size: 0.9rem;
+        }
+
+        .footer-col a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.85rem;
+            color: #95a5a6;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .featured-card {
+                grid-column: span 1;
+                flex-direction: column;
+            }
+
+            .featured-card .card-img {
+                width: 100%;
+                height: 200px;
+            }
+
+            .featured-card .card-body {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">换心<span>奇情</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">热门连载</a></li>
+                    <li><a href="#">精品短篇</a></li>
+                    <li><a href="#">作者专栏</a></li>
+                    <li><a href="#">社区讨论</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="btn-subscribe">订阅更新</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>当心脏跳动不再属于自己</h1>
+                <p>探索都市异能小说中关于心脏移植、记忆传承与情感救赎的黑暗与浪漫。在这里，每一次心跳都是一段未完的奇情。</p>
+            </div>
+        </section>
+
+        <!-- Featured Section -->
+        <section class="container">
+            <div class="section-header">
+                <h2 class="section-title">本周重磅推荐</h2>
+                <a href="#" class="view-more">查看全部 &rarr;</a>
+            </div>
+            <div class="grid-3">
+                <article class="card featured-card">
+                    <img src="https://picsum.photos/seed/heart1/800/400" alt="心脏移植手术图" class="card-img">
+                    <div class="card-body">
+                        <span class="card-tag">深度解析</span>
+                        <h3 class="card-title">心脏移植手术的伦理困境与科幻设定</h3>
+                        <p class="card-desc">在《换心奇情》类故事中，心脏不仅是器官，更是记忆与情感的载体。本文探讨了当宿主接受捐赠者心脏后，如何面对原主残留的情感记忆与潜意识冲突。</p>
+                        <div class="card-footer">
+                            <div class="author">
+                                <img src="https://picsum.photos/seed/doc/50/50" alt="Doctor" class="author-avatar">
+                                <span>医疗科普组</span>
+                            </div>
+                            <span>5分钟阅读</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="card">
+                    <img src="https://picsum.photos/seed/love/400/300" alt="都市夜景" class="card-img">
+                    <div class="card-body">
+                        <span class="card-tag">情感</span>
+                        <h3 class="card-title">借来的心跳：一段禁忌的罗曼史</h3>
+                        <p class="card-desc">由于一次意外，他拥有了她的心脏。从此，他在每一次心跳中都能感受到她的存在，两人陷入了一场无法言说的情感纠葛。</p>
+                        <div class="card-footer">
+                            <div class="author">
+                                <img src="https://picsum.photos/seed/u1/50/50" alt="User" class="author-avatar">
+                                <span>林语</span>
+                            </div>
+                            <span>已完结</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="card">
+                    <img src="https://picsum.photos/seed/suspense/400/300" alt="悬疑场景" class="card-img">
+                    <div class="card-body">
+                        <span class="card-tag">悬疑</span>
+                        <h3 class="card-title">第25小时：心脏停跳的真相</h3>
+                        <p class="card-desc">当全世界都认为他已经死亡，只有他的新心脏知道他还活着。这是一场关于生存与背叛的猎杀游戏。</p>
+                        <div class="card-footer">
+                            <div class="author">
+                                <img src="https://picsum.photos/seed/u2/50/50" alt="User" class="author-avatar">
+                                <span>暗夜行者</span>
+                            </div>
+                            <span>连载中</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Content Categories -->
+        <section class="container">
+            <div class="section-header">
+                <h2 class="section-title">精彩分类</h2>
+            </div>
+            <div class="grid-4">
+                <div class="card" style="padding: 30px; text-align: center;">
+                    <div style="font-size: 2rem; margin-bottom: 10px;">💔</div>
+                    <h3>情感救赎</h3>
+                    <p style="font-size: 0.85rem; color: #666; margin-top: 10px;">关于爱、失去与重生的感人故事</p>
+                </div>
+                <div class="card" style="padding: 30px; text-align: center;">
+                    <div style="font-size: 2rem; margin-bottom: 10px;">🧠</div>
+                    <h3>记忆继承</h3>
+                    <p style="font-size: 0.85rem; color: #666; margin-top: 10px;">探索新心脏带来的潜意识记忆</p>
+                </div>
+                <div class="card" style="padding: 30px; text-align: center;">
+                    <div style="font-size: 2rem; margin-bottom: 10px;">⚖️</div>
+                    <h3>伦理冲突</h3>
+                    <p style="font-size: 0.85rem; color: #666; margin-top: 10px;">法律、道德与人性的边界试探</p>
+                </div>
+                <div class="card" style="padding: 30px; text-align: center;">
+                    <div style="font-size: 2rem; margin-bottom: 10px;">🚑</div>
+                    <h3>异能医疗</h3>
+                    <p style="font-size: 0.85rem; color: #666; margin-top: 10px;">超自然医学与身体改造设定</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Latest Updates -->
+        <section class="container">
+            <div class="section-header">
+                <h2 class="section-title">最新更新</h2>
+                <a href="#" class="view-more">查看更新日志 &rarr;</a>
+            </div>
+            <div class="topic-list">
+                <a href="#" class="topic-item">
+                    <div class="topic-icon">📖</div>
+                    <div class="topic-content">
+                        <h4>《借来的心跳》第42章：深夜的悸动</h4>
+                        <p>更新时间：2小时前 | 作者：墨染青衣</p>
+                    </div>
+                </a>
+                <a href="#" class="topic-item">
+                    <div class="topic-icon">📖</div>
+                    <div class="topic-content">
+                        <h4>《异种心脏》第15章：实验室的秘密</h4>
+                        <p>更新时间：5小时前 | 作者：科幻迷</p>
+                    </div>
+                </a>
+                <a href="#" class="topic-item">
+                    <div class="topic-icon">📖</div>
+                    <div class="topic-content">
+                        <h4>《爱在心碎后》第108章：终章</h4>
+                        <p>更新时间：1天前 | 作者：温柔一刀</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="container">
+            <div class="section-header">
+                <h2 class="section-title">读者常见问题</h2>
+            </div>
+            <div class="grid-3">
+                <div class="faq-item">
+                    <div class="faq-question">心脏移植后会有记忆吗？</div>
+                    <div class="faq-answer">在现实医学中，心脏没有大脑，不具备处理复杂记忆的功能。但在科幻小说和《换心奇情》类的虚构故事中，这往往是核心设定，即心脏作为情感载体，能传递宿主残留的情绪或潜意识记忆。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">这类故事通常有哪些结局？</div>
+                    <div class="faq-answer">结局通常分为悲剧（宿主无法摆脱原主情感，走向毁灭）、救赎（宿主学会接纳与共存）或反转（原主灵魂未消散，与宿主合二为一）三种类型。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">如何分辨故事中的科学设定是否合理？</div>
+                    <div class="faq-answer">建议关注故事对医学背景的描写严谨度。如果是软科幻，可以享受情感张力；如果是硬科幻，则需关注对免疫排斥反应、神经传导等设定的解释是否自洽。</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>关于换心奇情</h3>
+                    <p style="color: #bdc3c7; font-size: 0.9rem; line-height: 1.8;">
+                        换心奇情是国内领先的都市异能与情感小说聚合平台。我们致力于挖掘和推广以心脏移植、记忆继承为核心设定的优质故事，为读者提供沉浸式的阅读体验。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h3>内容栏目</h3>
+                    <ul>
+                        <li><a href="#">热门连载</a></li>
+                        <li><a href="#">精品短篇</a></li>
+                        <li><a href="#">作者专区</a></li>
+                        <li><a href="#">投稿指南</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>帮助中心</h3>
+                    <ul>
+                        <li><a href="#">阅读指南</a></li>
+                        <li><a href="#">会员权益</a></li>
+                        <li><a href="#">侵权投诉</a></li>
+                        <li><a href="#">联系客服</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>订阅我们</h3>
+                    <p style="color: #bdc3c7; font-size: 0.9rem; margin-bottom: 10px;">第一时间获取最新连载资讯</p>
+                    <input type="email" placeholder="输入您的邮箱" style="width: 100%; padding: 8px; border-radius: 4px; border: none; margin-bottom: 10px;">
+                    <button style="width: 100%; padding: 8px; background-color: var(--accent-color); color: white; border: none; border-radius: 4px; cursor: pointer;">订阅</button>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 换心奇情 版权所有 | 欢迎转载请注明出处</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
